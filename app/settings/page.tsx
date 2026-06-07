@@ -92,7 +92,7 @@ export default function SettingsPage() {
                       type="number"
                       min={s.min}
                       max={s.max}
-                      value={settings[s.key as keyof Settings]}
+                      value={Number(settings[s.key as keyof Settings])}
                       onChange={e => handleChange(s.key as keyof Settings, parseInt(e.target.value))}
                       className="w-16 px-2 py-1 rounded bg-zinc-800 text-white text-sm font-bold text-right border border-zinc-700 focus:outline-none focus:border-emerald-500"
                     />
@@ -103,7 +103,7 @@ export default function SettingsPage() {
                   type="range"
                   min={s.min}
                   max={s.max}
-                  value={settings[s.key as keyof Settings]}
+                  value={Number(settings[s.key as keyof Settings])}
                   onChange={e => handleChange(s.key as keyof Settings, parseInt(e.target.value))}
                   className="w-full h-2 bg-zinc-800 rounded-full accent-emerald-500"
                 />
